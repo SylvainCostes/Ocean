@@ -1,18 +1,18 @@
-// src/components/Brain.js
+// src/components/Intestin.js
 import React, { useState } from "react";
-import brainImage from "../assets/brain.png"; // Assurez-vous que le chemin est correct
+import IntestinImage from "../assets/intestin.png"; // Assurez-vous que le chemin est correct
 
-const Brain = () => {
+const Intestin = () => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
         <div
             style={{
                 position: "absolute",
-                top: "10%", // Position verticale relative
-                left: isHovered ? "45.5%" : "44.5%", // Position horizontale réactive
+                top: "34.9%", // Position verticale relative
+                left: "47%", // Position horizontale relative
                 transform: "translate(-50%, -50%)", // Centrage exact
-                width: isHovered ? "7%" : "4%", // Taille réactive
+                width: isHovered ? "50%" : "6%", // Taille réactive
                 zIndex: 3,
                 opacity: isHovered ? "1" : "0.5", // Opacité réactive
                 transition: "all 0.3s ease-in-out", // Transition fluide
@@ -22,10 +22,10 @@ const Brain = () => {
             onMouseLeave={() => setIsHovered(false)} // Quitte le survol
         >
             <img
-                src={brainImage}
-                alt="Brain"
+                src={IntestinImage}
+                alt="Intestin"
                 style={{
-                    width: "400%", // Remplit le conteneur
+                    width: "100%", // Remplit le conteneur
                     height: "auto", // Maintient le ratio d'aspect
                     display: "block",
                 }}
@@ -34,4 +34,4 @@ const Brain = () => {
     );
 };
 
-export default Brain;
+export default Intestin;
