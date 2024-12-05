@@ -8,7 +8,7 @@ function App() {
     return (
         <div style={{ position: "relative", width: "100%", height: "100vh" }}>
             {/* Arrière-plan océan */}
-            {/*<OceanScene />*/}
+            <OceanScene />
             <BodyParts />
             {/*<HumanModel />*/}
         </div>

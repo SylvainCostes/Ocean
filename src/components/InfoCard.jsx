@@ -7,10 +7,9 @@ const InfoCard = ({ title, description, isVisible }) => {
                 position: "fixed", // Toujours en haut à gauche
                 top: "0",
                 left: "10px",
-                width: "250px",
+                width: "20%",
                 padding: "15px 20px", // Espacement interne
                 backgroundColor: "#f9f5dc", // Couleur parcheminée
-                backgroundImage: "url('https://i.imgur.com/OqsKPPE.png')", // Texture vintage
                 backgroundSize: "cover", // Ajustement de l'image
                 backgroundRepeat: "no-repeat",
                 border: "2px solid #8b5e3c", // Bordure marron
