@@ -27,3 +27,6 @@ const BodyParts = () => {
 };
 
 export default BodyParts;
+
+
+

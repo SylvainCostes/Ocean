@@ -1,33 +1,30 @@
-// src/components/Heart.js
-import React, { useState } from "react";
+import React from "react";
+import Organ from "./Organ";
 import lungImage from "../assets/lung.png";
 
 const Lung = () => {
-    const [isHovered, setIsHovered] = useState(false);
-
     return (
-        <div
-            style={{
+        <Organ
+            image={lungImage}
+            alt="Lung"
+            initialStyles={{
                 position: "absolute",
-                top: "24%", // Position initiale
-                left: isHovered ? "43.5%" : "45.8%", // Position initiale
-                width: isHovered ? "13%" : "7.5%", // Taille agrandie si survolé
+                top: "24%",
+                left: "45.8%",
+                width: "7.5%",
                 zIndex: 2,
-                opacity: isHovered ? "100%" : "50%", // Opacité augmentée si survolé
-                transition: "all 0.3s ease-in-out", // Transition fluide
+                opacity: "50%",
             }}
-            onMouseEnter={() => setIsHovered(true)} // Survol de la souris
-            onMouseLeave={() => setIsHovered(false)} // Quitte le survol
-        >
-            <img
-                src={lungImage}
-                alt="Heart"
-                style={{
-                    width: "100%", // L'image remplit le conteneur
-                    display: "block", // Évite les marges indésirables
-                }}
-            />
-        </div>
+            hoverStyles={{
+                left: "43.5%",
+                width: "13%",
+                opacity: "100%",
+            }}
+            info={{
+                title: "Poumons",
+                description: "Les poumons assurent les échanges gazeux avec le sang.",
+            }}
+        />
     );
 };
 

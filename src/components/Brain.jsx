@@ -1,33 +1,30 @@
-// src/components/Heart.js
-import React, { useState } from "react";
-import headImage from "../assets/brain.png";
+import React from "react";
+import Organ from "./Organ";
+import brainImage from "../assets/brain.png";
 
 const Brain = () => {
-    const [isHovered, setIsHovered] = useState(false);
-
     return (
-        <div
-            style={{
+        <Organ
+            image={brainImage}
+            alt="Brain"
+            initialStyles={{
                 position: "absolute",
-                top: "10%", // Position initiale
-                left: isHovered ? "45.5%" : "47.5%", // Position initiale
-                width: isHovered ? "7%" : "4%", // Taille agrandie si survolé
+                top: "9.9%",
+                left: "48.2%",
+                width: "3.3%",
                 zIndex: 2,
-                opacity: isHovered ? "100%" : "50%", // Opacité augmentée si survolé
-                transition: "all 0.3s ease-in-out", // Transition fluide
+                opacity: "50%",
             }}
-            onMouseEnter={() => setIsHovered(true)} // Survol de la souris
-            onMouseLeave={() => setIsHovered(false)} // Quitte le survol
-        >
-            <img
-                src={headImage}
-                alt="Heart"
-                style={{
-                    width: "100%", // L'image remplit le conteneur
-                    display: "block", // Évite les marges indésirables
-                }}
-            />
-        </div>
+            hoverStyles={{
+                left: "46.5%",
+                width: "7%",
+                opacity: "100%",
+            }}
+            info={{
+                title: "Cerveau",
+                description: "Le cerveau est l'organe central du système nerveux.",
+            }}
+        />
     );
 };
 

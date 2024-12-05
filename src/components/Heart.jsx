@@ -1,33 +1,29 @@
-// src/components/Heart.js
-import React, { useState } from "react";
+import React from "react";
+import Organ from "./Organ";
 import heartImage from "../assets/heart.png";
 
 const Heart = () => {
-    const [isHovered, setIsHovered] = useState(false);
-
     return (
-        <div
-            style={{
+        <Organ
+            image={heartImage}
+            alt="Heart"
+            initialStyles={{
                 position: "absolute",
-                top: "26%", // Position initiale
-                left: "51.1%", // Position initiale
-                width: isHovered ? "3%" : "1.7%", // Taille agrandie si survolé
+                top: "26%",
+                left: "51.1%",
+                width: "1.7%",
                 zIndex: 3,
-                opacity: isHovered ? "100%" : "50%", // Opacité augmentée si survolé
-                transition: "all 0.3s ease-in-out", // Transition fluide
+                opacity: "50%",
             }}
-            onMouseEnter={() => setIsHovered(true)} // Survol de la souris
-            onMouseLeave={() => setIsHovered(false)} // Quitte le survol
-        >
-            <img
-                src={heartImage}
-                alt="Heart"
-                style={{
-                    width: "100%", // L'image remplit le conteneur
-                    display: "block", // Évite les marges indésirables
-                }}
-            />
-        </div>
+            hoverStyles={{
+                width: "3%",
+                opacity: "100%",
+            }}
+            info={{
+                title: "Cœur",
+                description: "Le cœur pompe le sang à travers le système circulatoire.",
+            }}
+        />
     );
 };
 
