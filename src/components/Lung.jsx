@@ -1,36 +1,37 @@
 // src/components/Lung.js
-import React, { useState } from "react";
+import React from "react";
 import lungImage from "../assets/lung.png"; // Assurez-vous que le chemin est correct
+import Organ from "./Organ";
 
 const Lung = () => {
-    const [isHovered, setIsHovered] = useState(false);
+    const initialStyles = {
+        top: "24%", // Position verticale relative
+        left: "45.8%", // Position horizontale relative
+        width: "34%", // Taille initiale
+        zIndex: 3,
+        opacity: 0.5,
+        transform: "translate(-50%, -50%)",
+    };
+
+    const hoverStyles = {
+        left: "43.5%",
+        width: "60%",
+        opacity: 1,
+    };
+
+    const info = {
+        title: "Poumons",
+        description: "Responsables de la respiration et de l'oxygénation du sang.",
+    };
 
     return (
-        <div
-            style={{
-                position: "absolute",
-                top: "24%", // Position verticale relative
-                left: isHovered ? "43.5%" : "45.8%", // Position horizontale réactive
-                transform: "translate(-50%, -50%)", // Centrage exact
-                width: isHovered ? "60%" : "34%", // Taille réactive
-                zIndex: 3,
-                opacity: isHovered ? "1" : "0.5", // Opacité réactive
-                transition: "all 0.3s ease-in-out", // Transition fluide
-                cursor: "pointer", // Indicateur de survol
-            }}
-            onMouseEnter={() => setIsHovered(true)} // Survol de la souris
-            onMouseLeave={() => setIsHovered(false)} // Quitte le survol
-        >
-            <img
-                src={lungImage}
-                alt="Lung"
-                style={{
-                    width: "100%", // Remplit le conteneur
-                    height: "auto", // Maintient le ratio d'aspect
-                    display: "block",
-                }}
-            />
-        </div>
+        <Organ
+            image={lungImage}
+            alt="Lung"
+            initialStyles={initialStyles}
+            hoverStyles={hoverStyles}
+            info={info}
+        />
     );
 };
 
